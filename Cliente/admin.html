@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración - Aurum Barber</title>
+    <link rel="stylesheet" href="Css/admin.css">
+    <script type="module" src="../Cliente/Js/admin.js"></script>
+</head>
+
+<body>
+    <!-- Dashboard de estadísticas -->
+    <div id="dashboard" class="dashboard">
+        <div class="dashboard-card">
+            <span class="dashboard-title">Total Reservas</span>
+            <span id="total-reservas" class="dashboard-value">0</span>
+        </div>
+        <div class="dashboard-card">
+            <span class="dashboard-title">Hoy</span>
+            <span id="reservas-hoy" class="dashboard-value">0</span>
+        </div>
+        <div class="dashboard-card">
+            <span class="dashboard-title">Clientes únicos</span>
+            <span id="clientes-unicos" class="dashboard-value">0</span>
+        </div>
+        <div class="dashboard-card">
+            <span class="dashboard-title">Servicio más solicitado</span>
+            <span id="servicio-popular" class="dashboard-value">-</span>
+        </div>
+    </div>
+
+    <h1>Reservas Recibidas</h1>
+    <div id="filtros">
+        <input type="text" id="busqueda" placeholder="Buscar por nombre, email o teléfono..." />
+    </div>
+    <table id="tabla-reservas">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Servicios</th>
+                <th>Descripción</th>
+                <th>Barbero</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <!-- 
+            Las reservas se cargan aquí dinámicamente mediante JavaScript.
+            Esta sección de la tabla (tbody) se llena con filas de reservas
+            obtenidas desde el servidor o una fuente de datos.
+        -->
+        <tbody> </tbody>
+    </table>
+
+    <button id="mostrar-form-btn" type="button">Agregar Reserva</button>
+    <button id="mostrar-barbero-btn" type="button">Agregar Barbero</button>
+
+    
+
+    <form id="agregar-form" style="display:none;">
+        <h2>Agregar Reserva Manualmente</h2>
+        
+        <div class="form-rowI">   
+
+            <label>Nombre: <input type="text" id="nuevo-nombre" required></label>
+            <label>Email: <input type="email" id="nuevo-email" required></label>
+            <label>Teléfono: <input type="text" id="nuevo-telefono" required></label>
+            <label>Fecha: <input type="date" id="nuevo-fecha" required></label>
+
+        </div>
+
+        <div class="form-rowD"> 
+                    
+            <label for="hora">Hora de la cita:</label>
+            <select id="nuevo-hora" name="hora" required>
+                <option value="">Selecciona una hora</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="16:00">04:00 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="18:00">06:00 PM</option>
+                <option value="19:00">07:00 PM</option>
+                <option value="20:00">08:00 PM</option>
+                <option value="21:00">09:00 PM</option>
+            </select><br><br>
+            <label for="nuevo-barbero">Barbero:</label>
+            <select id="nuevo-barbero" name="barbero" required>
+                <option value="">Selecciona un barbero</option>
+            </select>
+            
+        </div>
+           
+        
+        <br><br>
+        <label >Servicios:  </label>
+
+            <div class="servicios-opciones">
+                <input type="checkbox" id="servicio1" name="servicios" value="Corte de cabello">
+                <label for="servicio1"> CABELLO</label>
+
+                <input type="checkbox" id="servicio2" name="servicios" value="Barba">
+                <label for="servicio2"> BARBA</label>
+
+                <input type="checkbox" id="servicio3" name="servicios" value="Facial">
+                <label for="servicio3"> FACIAL</label>
+
+                <input type="checkbox" id="servicio4" name="servicios" value="Productos">
+                <label for="servicio4"> PRODUCTOS</label>
+            </div>
+
+        
+        <label>Descripción: <textarea id="nuevo-descripcion"></textarea></label>
+        <button type="submit">Agregar Reserva</button>
+    </form>
+
+    <!-- Sección de barberos -->
+    <section id="seccion-barberos">
+
+        <form id="form-barbero">
+            <h2>Registrar Barbero</h2>
+            <div class="form-barbero-rowI"> 
+                <label>Nombre: <input type="text" id="barbero-nombre" required></label>
+                <label>Edad: <input type="number" id="barbero-edad" required></label>
+                <label>Número: <input type="text" id="barbero-numero" required></label>
+                <label>Cédula: <input type="text" id="barbero-cedula" required></label>
+            </div>
+            
+            <div class="form-barbero-rowD">
+                <label>Fecha de nacimiento: <input type="date" id="barbero-nacimiento" required></label>
+                <label>Email: <input type="email" id="barbero-email" required></label>
+                <label>Dirección: <input type="text" id="barbero-direccion" required></label>
+                
+            </div>
+            <button type="submit">Guardar Barbero</button>
+        </form>
+
+
+        <h3>Barberos Registrados</h3>
+        <div class="tabla-barberos-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Teléfono</th>
+                        <th>Cédula</th>
+
+                        <th>Nacimiento</th>
+                        <th>Email</th>
+                        <th>Dirección</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-barberos"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <table id="tabla-compras">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Producto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+
+</html>

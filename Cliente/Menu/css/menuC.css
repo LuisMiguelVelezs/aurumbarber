@@ -1,0 +1,232 @@
+:root {
+    /* Variables */
+    --color-1: #B8860B;
+    --color-2: #696969;
+    --color-3: #000000;
+    --color-4: #f5f5f5;
+    --color-5: #800000;
+
+    --fuentePrincipal: 'Staatliches', sans-serif;
+    --fuenteSecundaria: 'Merriweather', serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow: visible;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+
+}
+
+body {
+    font-size: 1.7rem;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 300;
+    background-image: linear-gradient(rgba(78, 78, 78, 0.7), rgba(0, 0, 0, 0.856)), url('/IMG/Img_barber1.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+
+
+}
+
+
+
+
+.menu {
+    width: 100%;
+    padding: 0 1rem 3rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-gap: 2rem 2rem;
+}
+
+.heading {
+    background: var(--color-1);
+    color: var(--color-4);
+    margin-bottom: 1rem;
+    padding: 3rem 0;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    border-radius: 1.5rem;
+
+}
+
+.heading h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-transform: uppercase;
+
+}
+
+.heading h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+}
+
+.heading a{
+    display: flex;
+    justify-content: left;
+    font-size: 3rem;
+    margin-left: 2rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--color-4);
+    text-decoration: none;
+}
+
+.seleccion{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.drinks-items {
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+    border-radius: 1.5rem;
+    background-color: var(--color-4);
+    box-shadow: 0 0 1.5rem rgba(12, 12, 12, 0.685);
+    transition: .2s ease-in-out;
+
+}
+
+.drinks-items img {
+    position: relative;
+    width: 100%;
+    height: 22rem;
+    cursor: pointer;
+    object-fit: contain;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+h1 {
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.details {
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr 5rem;
+    grid-row-gap: 1.5rem;
+}
+
+.details-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.uno {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--color-3);
+    margin: 0;
+}
+
+.price {
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--color-1);
+    margin: 0;
+}
+
+
+
+.details>p {
+    font-size: 1.5rem;
+    color: var(--color-3);
+    line-height: 2rem;
+    font-weight: 400;
+    align-self: stretch;
+    margin: 0;
+}
+
+.details button {
+    background: var(--color-1);
+    width: 10rem;
+    color: var(--color-4);
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    margin: 0;
+}
+
+.details button:hover{
+    background: var(--color-5);
+    color: var(--color-4);
+}
+
+@media (max-width: 1084px) {
+    .heading {
+        display: grid;
+        grid-column: 1/-1;
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 810px) {
+    .heading {
+        display: grid;
+        grid-column: 1/-1;
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .heading {
+        display: grid;
+        grid-column: 1/-1;
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 400px) {
+    .heading {
+        display: grid;
+        grid-column: 1/-1;
+        
+    }
+
+    .heading h1 {
+        font-size: 3rem;
+    }
+    .heading h3 {
+        font-size: 1.5rem;
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+}

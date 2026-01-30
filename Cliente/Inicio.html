@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Staatliches&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../Cliente/Css/Inicio.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../IMG/Logo2.png">
+    <title>Aurum Barber</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1> <a href="./admin.html" class="logo">Aurum Barber</a></h1>
+
+        <input type="checkbox" id="check">
+
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="content-nav">
+            <a href="#Inicio" class="active">Inicio</a>
+            <a href="#Servicios">Servicios</a>
+            <a href="#Tienda">Tienda</a>
+            <a href="#Contacto">Contacto</a>
+            <a href="#Ubicacion">Ubicación</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Inicio" class="Inicio1">
+            <div class="container2">
+                <div class="container2-1">
+                    <h2>La esencia del lujo masculino, reflejada en estilo y relajación perfecta</h2>
+                    <p>Aurum Barber es un lugar donde puedes encontrar los mejores cortes de cabello y barba, con los
+                        mejores barberos de la ciudad. Ven y disfruta de un ambiente agradable y de calidad.</p>
+                </div>
+                <a class="boton" href="#Contacto">Quiero Saber Más</a>
+            </div>
+        </section>
+
+        <section id="Servicios">
+
+            <div class="container3-2">
+
+                <h2>Servicios</h2>
+
+                <p>Ven y disfruta de los diferentes serivicios que tenemos para ti</p>
+
+                <div class="container-cards">
+
+                    <div class="subcont-cards">
+
+                        <div class="card-area">
+
+                            <div class="card">
+                                <img src="/IMG/ImgCarru6.jpeg" alt="">
+                                <div class="overlay">
+                                    <h3>Cabello</h3>
+                                    <p>Ven y disfruta de un corte de cabello de calidad.</p>
+                                    <a href="#Contacto">Agendar Ahora</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="/IMG/ImgCarru3.3.jpg" alt="">
+                                <div class="overlay">
+                                    <h3>Barba</h3>
+                                    <p>Dale un estilo increible a tu barba.</p>
+                                    <a href="#Contacto">Agendar Ahora</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="/IMG/ImgCarru7.jpeg" alt="">
+                                <div class="overlay">
+                                    <h3>Facial</h3>
+                                    <p>Cuidar tu rostro es tan importante como un buen corte de cabello.</p>
+                                    <a href="#Contacto">Agendar Ahora</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="/IMG/ImgCarru8.jpeg" alt="">
+                                <div class="overlay">
+                                    <h3>Personal</h3>
+                                    <p>Tener productos para cuidar de tu rostro, cabello y barba no tiene precio.</p>
+                                    <a href="#Contacto">Agendar Ahora</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+        </section>
+
+        <section id="Tienda">
+            <div class="container3-1">
+                <h2>Menú Bebidas</h2>
+                <p>*Al consumir nuestras bebidas, aceptas los siguientes términos y condiciones:</p>
+                <div class="condiciones">
+                    <p>Las bebidas de Aurum Barber no son aptas para menores de edad, y se solicitará identificación
+                        para verificar su mayoría de edad. No se servirán a personas con problemas de salud
+                        relacionados. Cada cliente puede disfrutar de <b>una (1) bebida gratis</b> del menú, limitada a
+                        una por visita. La barbería no se hace responsable por el consumo de las bebidas. Precios y
+                        condiciones pueden cambiar sin previo aviso.</p>
+                </div>
+                <a class="boton2" href="./Menu/html/menu.html">Abrir Menú</a>
+            </div>
+        </section>
+
+
+
+        <section id="Contacto">
+
+            <div class="container3-3">
+
+                    <div class="formulario-container">
+                        <h2>Contáctanos para una reserva</h2>
+
+                        <form id="form-unificado">
+                            <div class="formularios-flex">
+                                <!-- Datos de Contacto -->
+                                <div class="formulario">
+                                    <h3>Datos de Contacto</h3>
+
+                                    <label for="nombre">Nombre completo:</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+
+                                    <label for="email">Correo electrónico:</label>
+                                    <input type="email" id="email" name="email" required>
+
+                                    <label for="telefono">Teléfono:</label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+
+                                <!-- Datos de la Reserva -->
+                                <div class="formulario">
+                                    <h3>Reserva tu Cita</h3>
+
+                                    <label for="fecha">Fecha de la cita:</label>
+                                    <input type="date" id="fecha" name="fecha" required>
+
+                                    <label for="hora">Hora de la cita:</label>
+                                    <select id="hora" name="hora" required>
+                                        <option value="">Selecciona una hora</option>
+                                        <option value="09:00">09:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">01:00 PM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="15:00">03:00 PM</option>
+                                        <option value="16:00">04:00 PM</option>
+                                        <option value="17:00">05:00 PM</option>
+                                        <option value="18:00">06:00 PM</option>
+                                        <option value="19:00">07:00 PM</option>
+                                        <option value="20:00">08:00 PM</option>
+                                        <option value="21:00">09:00 PM</option>
+                                    </select><br><br>
+
+
+                                    <label>Selecciona los servicios deseados:</label>
+                                    <div class="servicios-opciones">
+                                        <input type="checkbox" id="servicio1" name="servicios" value="Corte de cabello">
+                                        <label for="servicio1"> CABELLO</label>
+
+                                        <input type="checkbox" id="servicio2" name="servicios" value="Barba">
+                                        <label for="servicio2"> BARBA</label>
+
+                                        <input type="checkbox" id="servicio3" name="servicios" value="Facial">
+                                        <label for="servicio3"> FACIAL</label>
+
+                                        <input type="checkbox" id="servicio4" name="servicios" value="Productos">
+                                        <label for="servicio4"> PRODUCTOS</label>
+                                    </div>
+
+
+                                    <label for="descripcion">Descripción adicional:</label>
+                                    <textarea id="descripcion" name="descripcion" rows="4"
+                                        placeholder="¿Algo que quieras agregar?"></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit">Reservar</button>
+
+                            <div id="mensaje-confirmacion">
+                                ¡Gracias! La barbería se pondrá en contacto contigo pronto para confirmar tu reserva.
+                            </div>
+                        </form>
+                    </div>
+                    
+
+                
+
+
+
+            </div>
+        </section>
+
+
+        <section id="Ubicacion">
+            <div class="container3-4">
+                <h2>Ubicación</h2>
+                <!-- Hacer el mapa responsive -->
+                <iframe
+                    src="https://www.google.com/maps/d/embed?mid=117Z1yV0Hi4FE9MCeUuMiSDR_rgfFnZQ&ehbc=2E312F&noprof=1"
+                    width="100%" height="440" style="max-width: 1365px;"></iframe>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <!-- Sección Principal con Logo y Descripción -->
+            <div class="footer__brand">
+                <div class="footer__logo-container">
+                    <img src="../IMG/Logo2.png" alt="Logo Aurum Barber" class="footer__logo">
+                </div>
+                <h3 class="footer__title">Aurum Barber</h3>
+                <p class="footer__description">Elevamos el arte del cuidado masculino a su máxima expresión. Descubre
+                    una experiencia premium donde cada detalle está diseñado para resaltar tu estilo personal.</p>
+                <a href="#Contacto" class="footer__cta">Reserva tu cita</a>
+            </div>
+
+            <!-- Sección de Servicios -->
+            <div class="footer__section">
+                <h3 class="footer__title">Nuestros Servicios</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#Servicios" class="footer__link">Corte Clásico</a></li>
+                    <li class="footer__list-item"><a href="#Servicios" class="footer__link">Afeitado Tradicional</a>
+                    </li>
+                    <li class="footer__list-item"><a href="#Servicios" class="footer__link">Perfilado de Barba</a></li>
+                    <li class="footer__list-item"><a href="#Servicios" class="footer__link">Tratamientos Faciales</a>
+                    </li>
+                    <li class="footer__list-item"><a href="#Tienda" class="footer__link">Productos Exclusivos</a></li>
+                </ul>
+            </div>
+
+            <!-- Sección de Enlaces Rápidos -->
+            <div class="footer__section">
+                <h3 class="footer__title">Enlaces Rápidos</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#Inicio" class="footer__link">Inicio</a></li>
+                    <li class="footer__list-item"><a href="#Servicios" class="footer__link">Servicios</a></li>
+                    <li class="footer__list-item"><a href="#Tienda" class="footer__link">Menú de Bebidas</a></li>
+                    <li class="footer__list-item"><a href="#Contacto" class="footer__link">Contacto</a></li>
+                    <li class="footer__list-item"><a href="#Ubicacion" class="footer__link">Ubicación</a></li>
+                </ul>
+            </div>
+
+            <!-- Sección de Contacto e Información -->
+            <div class="footer__section">
+                <h3 class="footer__title">Contacto & Horarios</h3>
+                <div class="footer__contact-item">
+                    <i class='bx bx-map footer__icon'></i>
+                    <span>Av. 5a Nte. #23d Norte-121, Cali, Valle del Cauca.</span>
+                </div>
+                <div class="footer__contact-item">
+                    <i class='bx bx-phone footer__icon'></i>
+                    <span>+57 316111111</span>
+                </div>
+                <div class="footer__contact-item">
+                    <i class='bx bx-envelope footer__icon'></i>
+                    <span>contacto@aurumbarber.com</span>
+                </div>
+
+                <h4 class="footer__subtitle">Horario de Atención</h4>
+                <div class="footer__schedule">
+                    <div class="footer__schedule-item">
+                        <span class="footer__day">Lunes - Viernes:</span>
+                        <span class="footer__hours">9:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="footer__schedule-item">
+                        <span class="footer__day">Sábados:</span>
+                        <span class="footer__hours">9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="footer__schedule-item">
+                        <span class="footer__day">Domingos:</span>
+                        <span class="footer__hours">Cerrado</span>
+                    </div>
+                </div>
+
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="TikTok">
+                        <i class='bx bxl-tiktok'></i>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter">
+                        <i class='bx bxl-twitter'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="footer__container">
+                <p class="footer__copyright">&copy; <span id="current-year">2025</span> Aurum Barber. Todos los derechos
+                    reservados.</p>
+                <div class="footer__legal">
+                    <a href="#" class="footer__legal-link">Política de Privacidad</a>
+                    <a href="#" class="footer__legal-link">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+                            document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+
+
+
+
+    <!-- Script para actualizar dinámicamente el año del copyright -->
+    <script>
+                            document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+
+
+
+
+
+
+    <script src="../Cliente/Js/script.js" defer></script>
+
+    <script type="module" src="../Cliente/Js/firebase.js"></script>
+    <script type="module" src="../Cliente/Js/formulario.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,555 @@
+/* Usa las variables de inicio.css */
+:root {
+    --color-1: #B8860B;      /* Amarillo dorado */
+    --color-2: #696969;      /* Gris oscuro */
+    --color-3: #000000;      /* Negro */
+    --color-4: #f5f5f5;      /* Blanco humo */
+    --color-5: #800000;      /* Rojo oscuro */
+    --color-6: #fff;         /* Blanco */
+    --color-7: #e5e7eb;      /* Gris claro para bordes */
+    --color-8: #f9fafb;      /* Gris muy claro para fondos */
+    --color-9: #a5b4fc;      /* Azul claro para focus */
+    --fuenteSecundaria: 'Merriweather', serif;
+}
+
+/* Fondo y tipografía general */
+body {
+    padding: 2rem;
+    margin: 0;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 300;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/IMG/Img_barber1.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Dashboard de estadísticas */
+.dashboard {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.dashboard-card {
+    background: var(--color-6);
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    padding: 1.2rem 2rem;
+    min-width: 180px;
+    text-align: center;
+    border: 1px solid var(--color-7);
+}
+.dashboard-title {
+    display: block;
+    color: var(--color-2);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.dashboard-value {
+    font-size: 2rem;
+    color: var(--color-1);
+    font-weight: bold;
+}
+
+/* Título */
+h1 {
+    color: var(--color-1);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+a{
+    display: flex;
+    justify-content: left;
+    font-size: 3rem;
+    margin-left: 2rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--color-1);
+    text-decoration: none;
+}
+
+/* Filtros */
+#filtros {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#busqueda {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--color-7);
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 350px;
+    background: var(--color-6);
+    transition: border 0.2s;
+    color: var(--color-3);
+}
+
+#busqueda:focus {
+    border-color: var(--color-1);
+    outline: none;
+}
+
+/* Botón de reservas y barberos */
+#mostrar-form-btn,
+#mostrar-barbero-btn {
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--color-1);
+    color: var(--color-6);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 1rem;
+}
+
+#mostrar-form-btn:hover,
+#mostrar-barbero-btn:hover {
+    background: var(--color-1);
+}
+
+/* Tabla de reservas y barberos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-6);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+}
+
+th,
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-7);
+    text-align: left;
+    border: none;
+}
+
+th {
+    background-color: var(--color-1);
+    color: var(--color-6);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: var(--color-4);
+    transition: background 0.2s;
+}
+
+/* Acciones */
+.acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
+button,
+.acciones button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--color-1);
+    color: var(--color-6);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button.eliminar-btn,
+button.eliminar-barbero-btn {
+    background: var(--color-5);
+}
+
+button.guardar-btn {
+    background: var(--color-1);
+}
+
+button.editar-barbero-btn {
+    background: #1e40af;
+}
+
+button.editar-barbero-btn:hover {
+    background: #2563eb;
+}
+
+button.eliminar-barbero-btn:hover,
+button.eliminar-btn:hover {
+    background: #dc2626;
+}
+
+button.guardar-btn:hover {
+    background: #d8a41f;
+}
+
+button:hover {
+    background: #d8a41f;
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* ============================= */
+/* Formularios principales igual tamaño y estilo */
+/* ============================= */
+#agregar-form,
+#seccion-barberos {
+    max-width: 1000px;
+    min-width: 320px;
+    width: 100%;
+    margin: 2rem auto 1.5rem auto;
+    background: var(--color-8);
+    padding: 1.2rem 1.5rem 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* Formulario de agregar reserva */
+/* ============================= */
+#agregar-form h2 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: var(--color-3);
+    text-align: center;
+}
+
+#agregar-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-1);
+    font-size: 1rem;
+}
+
+#agregar-form input,
+#agregar-form select,
+#agregar-form textarea {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.7rem;
+    border: 1px solid var(--color-7);
+    border-radius: 4px;
+    font-size: 1rem;
+    background: var(--color-6);
+    color: var(--color-3);
+    box-sizing: border-box;
+}
+
+#agregar-form button[type="submit"] {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    background: var(--color-1);
+    color: var(--color-6);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+}
+
+#agregar-form button[type="submit"]:hover {
+    background: var(--color-1);
+}
+
+#agregar-form input:focus {
+    border-color: var(--color-1);
+    outline: none;
+}
+
+/* ============================= */
+/* Servicios: grid visual tipo tarjetas */
+/* ============================= */
+
+.servicios-opciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+  margin-bottom: 0.7rem;
+}
+
+
+@media (max-width: 600px) {
+  .servicios-opciones {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ocultar checkboxes reales */
+.servicios-opciones input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilo base de las tarjetas */
+.servicios-opciones label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-4);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-size: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 4px rgba(26, 25, 25, 0.1);
+  color: var(--color-6);
+  font-family: var(--fuenteSecundaria);
+  margin: 0;
+  
+}
+
+/* Efecto al pasar el mouse */
+.servicios-opciones label:hover {
+  background-color: #e8e8e8;
+  color: var(--color-3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-1);
+}
+
+/* Efecto cuando el usuario selecciona */
+.servicios-opciones input[type="checkbox"]:checked + label {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  border-color: var(--color-1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.form-rowI{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ============================= */
+/* Formulario de barbero igual que el de reservas */
+/* ============================= */
+#form-barbero {
+    margin-bottom: 1rem;
+    background: var(--color-8);
+    padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.97rem;
+    box-sizing: border-box;
+}
+
+#form-barbero h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--color-3);
+    text-align: center;
+}
+
+#form-barbero label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: var(--color-1);
+    font-size: 0.97rem;
+}
+
+#form-barbero input[type="text"],
+#form-barbero input[type="number"],
+#form-barbero input[type="email"],
+#form-barbero input[type="date"] {
+    width: 100%;
+    padding: 0.3rem 0.4rem;
+    margin-bottom: 0.4rem;
+    border: 1px solid var(--color-7);
+    border-radius: 4px;
+    font-size: 0.97rem;
+    background: var(--color-8);
+    color: var(--color-3);
+    transition: border 0.2s;
+    box-sizing: border-box;
+}
+
+#form-barbero input:focus {
+    border-color: var(--color-1);
+    outline: none;
+}
+
+#form-barbero button[type="submit"] {
+    min-width: 90px;
+    margin-bottom: 0.3rem;
+    font-size: 0.97rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    background: var(--color-1);
+    color: var(--color-6);
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+}
+
+#form-barbero button[type="submit"]:hover {
+    background: #d8a41f;
+}
+
+/* Tabla de barberos */
+#seccion-barberos {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 0.5rem;
+    display: none; /* Oculta por defecto */
+}
+
+#seccion-barberos table {
+    min-width: 800px;
+    font-size: 0.92rem;
+    background: var(--color-6);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    border-collapse: collapse;
+}
+
+#seccion-barberos th,
+#seccion-barberos td {
+    padding: 0.5rem 0.5rem;
+    white-space: nowrap;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--color-7);
+    text-align: left;
+}
+
+#seccion-barberos th {
+    background-color: var(--color-1);
+    color: var(--color-6);
+    font-weight: 600;
+}
+
+#seccion-barberos tr:last-child td {
+    border-bottom: none;
+}
+
+#seccion-barberos tr:hover {
+    background: var(--color-4);
+    transition: background 0.2s;
+}
+
+#seccion-barberos .acciones {
+    gap: 0.3rem;
+}
+
+button.editar-barbero-btn {
+    background: #1e40af;
+    color: var(--color-6);
+    gap: 0.3rem;
+}
+button.editar-barbero-btn:hover {
+    background: #2563eb;
+}
+button.eliminar-barbero-btn {
+    background: var(--color-5);
+    color: var(--color-6);
+}
+button.eliminar-barbero-btn:hover {
+    background: #dc2626;
+}
+
+
+.form-barbero-rowI {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.form-barbero-rowD {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Inputs en modo edición */
+.campo input[type="text"] {
+    width: 95%;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--color-9);
+    border-radius: 4px;
+    font-size: 1rem;
+    background: var(--color-4);
+    color: var(--color-3);
+}
+
+/* Responsive para tablas y sección barberos */
+@media (max-width: 900px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    th,
+    td {
+        padding: 0.7rem;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(44, 62, 80, 0.06);
+    }
+
+    th {
+        background: var(--color-1);
+        color: var(--color-6);
+        border-radius: 8px 8px 0 0;
+    }
+
+    #agregar-form,
+    #seccion-barberos {
+        max-width: 99vw;
+        min-width: unset;
+        padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    }
+    #form-barbero {
+        padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+        font-size: 0.93rem;
+    }
+    #seccion-barberos table {
+        min-width: 700px;
+        font-size: 0.87rem;
+    }
+    #seccion-barberos th,
+    #seccion-barberos td {
+        padding: 0.2rem 0.3rem;
+        font-size: 0.87rem;
+    }
+    #seccion-barberos .tabla-barberos-scroll {
+        margin: 0;
+        padding: 0;
+    }
+}

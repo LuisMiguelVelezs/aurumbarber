@@ -1,0 +1,331 @@
+:root {
+    /* Variables */
+    --color-1: #B8860B;
+    --color-2: #696969;
+    --color-3: #000000;
+    --color-4: #f5f5f5;
+    --color-5: #800000;
+
+    --fuentePrincipal: 'Staatliches', sans-serif;
+    --fuenteSecundaria: 'Merriweather', serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow: visible;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+
+}
+
+body {
+    font-size: 1.7rem;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 300;
+    background-image: linear-gradient(rgba(48, 48, 48, 0.9), rgba(0, 0, 0, 0.9)), url('/IMG/Img_barber1.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+
+
+}
+
+
+
+
+
+.heading {
+    display: grid;
+    height: 80vh;
+    width: 100%;
+
+    color: var(--color-4);
+    margin-top: 3rem;
+    padding: 5rem;
+    text-align: center;
+    border-radius: 1.5rem;
+
+
+}
+
+.heading h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-transform: uppercase;
+
+    
+
+}
+
+
+
+.heading h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+}
+
+.atras a {
+    display: flex;
+    justify-content: left;
+    font-size: 3rem;
+    margin-left: 2rem;
+    border: #B8860B 4px solid;
+    border-radius: 2rem;
+    width:3.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--color-4);
+    text-decoration: none;
+}
+
+.atras i{
+    width: 4rem;
+}
+
+.container-cards {
+    padding: 0;
+    padding-bottom: 5rem;
+    width: 100%;
+    margin-top: 3rem;
+
+
+}
+
+.subcont-cards {
+    padding: 0 2rem;
+
+}
+
+.card-area {
+    display: grid;
+    margin-top: 1rem;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+}
+
+.card {
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border: var(--color-1) 4px solid;
+    background-color: var(--color-4);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 1rem;
+    transition: transform 0.3s;
+}
+
+
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    height: 0;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    bottom: 0;
+    border-radius: 1rem;
+    background-color: linear-gradient(transparent, rgba(0, 0, 0, 1));
+
+    transition: height 0.5s;
+
+
+}
+
+.overlay h3 {
+    margin-top: 20%;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--color-3);
+
+    text-shadow:
+        /* Sombra de texto */
+        1.5px 1.5px 0 var(--color-4),
+        -1.5px -1.5px 0 var(--color-4),
+        -1.5px 1.5px 0 var(--color-4),
+        1.5px -1.5px 0 var(--color-4);
+    /* Borde dorado */
+
+}
+
+.overlay a {
+
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-4);
+    background-color: var(--color-1);
+    border-radius: 5rem;
+    text-align: center;
+    padding: 10px 25px;
+    margin-bottom: 3rem;
+    border: var(--color-1) 2px solid;
+
+
+}
+
+.overlay p {
+    font-size: 1.5rem;
+    color: var(--color-4);
+    margin-bottom: 2rem;
+
+}
+
+.card:hover img {
+    transform: scale(1.2);
+
+
+}
+
+.card:hover .overlay {
+    height: 100%;
+}
+
+
+@media(max-width: 662px) {
+    
+
+    .heading {
+        padding: 3rem;
+        height: auto;
+        width: 100%;
+
+    }
+    
+    .heading h1 {
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .heading h3 {
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .atras a {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .overlay h3 {
+        font-size: 2rem;
+    }
+
+    .overlay a {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    .overlay p {
+        font-size: 1.2rem;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .heading h1 {
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .heading h3 {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .atras a {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .overlay a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .heading h1 {
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
+        margin-left: 0;
+    }
+
+    .heading h3 {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        
+    }
+
+    .atras a {
+        font-size: 1.2rem;
+       
+    }
+
+    .card img {
+        height: 120px;
+    }
+
+    .overlay h3 {
+        font-size: 1.2rem;
+    }
+
+    .overlay a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+}

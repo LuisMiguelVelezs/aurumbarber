@@ -1,0 +1,1147 @@
+:root {
+    /* Variables */
+    --color-1: #B8860B;
+    --color-2: #696969;
+    --color-3: #000000;
+    --color-4: #f5f5f5;
+    --color-5: #800000;
+
+    --fuentePrincipal: 'Staatliches', sans-serif;
+    --fuenteSecundaria: 'Merriweather', serif;
+}
+
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow: visible;
+    max-width: 100%;
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+    font-size: 1.7rem;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 300;
+    background-image: linear-gradient(rgba(75, 75, 75, 0.7), rgba(0, 0, 0, 0.7)), url('/IMG/Img_barber1.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 9rem;
+
+
+}
+
+
+h1 {
+    font-family: var(--fuentePrincipal);
+    color: var(--color-4);
+    text-align: center;
+    text-shadow:
+        /* Sombra de texto */
+        1.5px 1.5px 0 var(--color-1),
+        -1.5px -1.5px 0 var(--color-1),
+        -1.5px 1.5px 0 var(--color-1),
+        1.5px -1.5px 0 var(--color-1);
+    /* Borde dorado */
+}
+
+h2 {
+    color: var(--color-4);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-4);
+    font-size: 2rem;
+}
+
+p {
+    font-size: 2rem;
+    color: var(--color-4);
+    text-align: center;
+
+}
+
+/*.......... Header ....................... */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(100px);
+
+}
+
+
+
+
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+
+}
+
+
+/*.......... Nav ....................... */
+
+
+.content-nav a {
+    font-size: 1.5rem;
+    color: var(--color-4);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: color .3s ease;
+    padding: 0.7rem;
+    border-radius: 0.6rem;
+
+
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--color-1);
+    border-bottom: 3px solid var(--color-1);
+
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: var(--color-4);
+    cursor: pointer;
+    display: none;
+
+}
+
+@media(max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+
+@media (max-width: 840px) {
+
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .content-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(100px);
+        overflow: hidden;
+        transition: .6s ease;
+        border-bottom: 1rem;
+
+    }
+
+    #check:checked~.content-nav {
+        height: 22rem;
+    }
+
+    .content-nav a {
+        display: block;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        text-align: center;
+        transition: .6s ease;
+
+    }
+
+
+
+
+}
+
+
+
+/*.......... Seccion general ....................... */
+
+
+/*.......... Container 2 ....................... */
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+
+}
+
+.container2-1 h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-4);
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.container2-1 p {
+    font-size: 1.8rem;
+    color: var(--color-4);
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+
+/*.......... Container 3 ....................... */
+
+.container3-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+
+}
+
+
+
+.container3-1 h2 {
+    display: inline-block;
+    position: relative;
+    color: var(--color-4);
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.container3-1 h2::after,
+.container3-1 h2::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em;
+
+
+}
+
+.container3-1 h2::before {
+    left: -120px;
+
+}
+
+.container3-1 h2::after {
+    right: -120px;
+}
+
+
+
+
+.container3-1 p {
+
+    font-size: 1.8rem;
+    color: var(--color-4);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.condiciones p {
+    font-size: 1.3rem;
+    color: var(--color-4);
+    text-align: center;
+    padding: 0rem 10rem 1rem;
+    margin-bottom: 5rem;
+
+
+}
+
+/*.......... Container 3.2 ....................... */
+
+
+
+.container3-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 9rem;
+    margin: 0;
+    background-color: rgba(221, 221, 221, 0.705);
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+
+
+}
+
+.container3-2 h2 {
+    color: var(--color-3);
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+.container3-2 p {
+    color: var(--color-3);
+    margin-bottom: 5rem;
+    font-size: 1.8rem;
+}
+
+
+
+
+
+
+/*.......... Carrusel ....................... */
+
+
+
+
+/*..........Cards ....................... */
+
+.container-cards {
+    padding: 0;
+    padding-bottom: 5rem;
+    width: 100%;
+
+}
+
+.subcont-cards {
+    padding: 0 2rem;
+
+}
+
+.card-area {
+    display: grid;
+    margin-top: 1rem;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+}
+
+.card {
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border: var(--color-2) 1px solid;
+
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    height: 0;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    bottom: 0;
+    border-radius: 1rem;
+    background-color: rgba(80, 55, 0, 0.6);
+    transition: height 0.5s ease-in-out;
+}
+
+.overlay h3 {
+    margin-top: 37%;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--color-4);
+}
+
+.overlay a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-3);
+    background-color: var(--color-4);
+    border-radius: 5rem;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 3rem;
+    border: var(--color-1) 2px solid;
+}
+
+.overlay p {
+    font-size: 1.5rem;
+    color: var(--color-4);
+    margin-bottom: 2rem;
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+.card:hover .overlay {
+    height: 100%;
+}
+
+
+
+
+
+/*.......... Container 3-3 ....................... */
+/* Contacto*/
+
+.container3-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    background-color: rgba(221, 221, 221, 0.705);
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+}
+
+.container3-3 h2 {
+    color: var(--color-3);
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+
+.formulario-container {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;  
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.formulario-container h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: var(--color-3);
+}
+
+#form-unificado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formularios-flex {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.formulario {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1 1 46%; /* Ajusta el ancho de los formularios */
+  min-width: 400px;
+}
+
+.formulario h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #222;
+}
+
+.formulario label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="tel"],
+.formulario input[type="date"],
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+
+.servicios-opciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Ocultar checkboxes reales */
+.servicios-opciones input[type="checkbox"] {
+  display: none ;
+}
+
+/* Estilo base de las tarjetas */
+.servicios-opciones label {
+  display: block;
+  background-color: var(--color-1);
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-size: 16px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 4px rgba(26, 25, 25, 0.1);
+}
+
+/*  EFECTO AL PASAR EL MOUSE */
+.servicios-opciones label:hover {
+  background-color: #e8e8e8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-1);
+}
+
+/* Efecto cuando el usuario selecciona */
+.servicios-opciones input[type="checkbox"]:checked + label {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  border-color: var(--color-1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.servicios-opciones label{
+
+  font-family: var(--fuenteSecundaria);
+}
+
+
+.formulario textarea {
+  resize: vertical;
+}
+
+select#hora {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  color: var(--color-3);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 5px;
+  transition: border-color 0.3s;
+}
+
+select#hora:hover {
+  border-color: var(--color-1);
+}
+
+
+
+
+#mensaje-confirmacion {
+  display: none;
+  margin-top: 20px;
+  padding: 5px;
+  color: var(--color-1);
+
+  
+}
+#form-unificado button[type="submit"] {
+  margin-top: 30px;
+  background-color: #111;
+  color: #fff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#form-unificado button[type="submit"]:hover {
+  background-color: var(--color-1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formularios-flex {
+    flex-direction: column;
+  }
+
+  .formulario {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+
+
+
+
+/*.......... Container Ubicacion ....................... */
+
+.container3-4 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3.2rem;
+    background-color: var(--color-3);
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+/*.......... Footer....................... */
+
+
+/* ===== ESTILOS DEL FOOTER ===== */
+
+/* 
+ * METODOLOGÍA BEM (Block Element Modifier)
+ * Esta metodología ayuda a crear componentes reutilizables y estructurados
+ * .footer = bloque principal
+ * .footer__container = elemento dentro de footer
+ * .footer--dark = modificador (ejemplo)
+ */
+
+/* Contenedor principal del footer */
+.footer {
+    background-color: var(--color-3); /* Establece el color de fondo negro utilizando la variable predefinida */
+    position: relative; /* Permite posicionar elementos hijos con position: absolute en relación a este elemento */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga de los límites del footer */
+    padding-top: 6rem; /* Aplica espacio de relleno en la parte superior (6rem = 96px con base de 16px) */
+    z-index: 10; /* Asigna una capa de apilamiento para controlar superposiciones con otros elementos */
+}
+
+/* Efecto decorativo de línea en la parte superior del footer */
+.footer::before {
+    content: ''; /* Necesario para que el pseudo-elemento sea visible */
+    position: absolute; /* Posicionamiento absoluto con respecto al contenedor padre (.footer) */
+    top: 0; /* Alinea el elemento al borde superior */
+    left: 0; /* Alinea el elemento al borde izquierdo */
+    right: 0; /* Extiende el elemento hasta el borde derecho */
+    height: 1px; /* Altura de la línea decorativa */
+    background: linear-gradient(to right, transparent, var(--color-1), transparent); /* Gradiente que va desde transparente a dorado y luego a transparente */
+    opacity: 0.6; /* Establece la transparencia del elemento (40% transparente) */
+}
+
+/* Contenedor que limita el ancho del contenido y centra el footer */
+.footer__container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra horizontalmente el contenedor (0 arriba/abajo, auto izquierda/derecha) */
+    padding: 0 2rem; /* Espacio interior horizontal para evitar que el contenido toque los bordes en pantallas pequeñas */
+    display: grid; /* Utiliza CSS Grid para el layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crea columnas adaptables: auto-fit = tantas columnas como quepan, cada una mínimo 250px y máximo 1fr (fracción disponible) */
+    gap: 4rem; /* Espacio entre columnas y filas de la cuadrícula */
+}
+
+/* Sección de marca (logo y descripción) */
+.footer__brand {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: column; /* Organiza los elementos hijos en una columna vertical */
+    align-items: flex-start; /* Alinea los elementos hijos al inicio (izquierda) del contenedor */
+}
+
+/* Contenedor del logo */
+.footer__logo-container {
+    margin-bottom: 1.5rem; /* Espacio debajo del contenedor del logo */
+    position: relative; /* Permite posicionar elementos hijos con position: absolute */
+}
+
+/* Estilo del logo */
+.footer__logo {
+    width: 90px; /* Establece el ancho del logo */
+    height: auto; /* Mantiene la proporción de la imagen original */
+    filter: drop-shadow(0 0 5px rgba(184, 134, 11, 0.3)); /* Añade un efecto de sombra sutil con color dorado */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Define transiciones suaves para las propiedades transform y filter, con duración de 0.3 segundos */
+}
+
+/* Efecto al pasar el mouse sobre el logo */
+.footer__logo:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del logo un 5% al pasar el cursor */
+    filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.5)); /* Intensifica la sombra al pasar el cursor */
+}
+
+/* Estilo para los títulos de sección */
+.footer__title {
+    color: var(--color-1); /* Color dorado para los títulos */
+    font-size: 2.2rem; /* Tamaño de fuente (2.2rem = 35.2px con base de 16px) */
+    margin-bottom: 1.8rem; /* Espacio debajo del título */
+    position: relative; /* Necesario para posicionar la línea decorativa */
+    font-family: var(--fuentePrincipal); /* Usa la fuente principal definida en variables */
+    letter-spacing: 0.5px; /* Aumenta el espaciado entre letras para mejorar legibilidad */
+}
+
+/* Línea decorativa debajo de los títulos */
+.footer__title::after {
+    content: ''; /* Requerido para que el pseudo-elemento sea visible */
+    position: absolute; /* Posicionamiento con respecto al elemento padre (.footer__title) */
+    left: 0; /* Alinea a la izquierda */
+    bottom: -0.8rem; /* Posiciona 0.8rem por debajo del borde inferior del título */
+    width: 40px; /* Ancho inicial de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: var(--color-1); /* Color dorado para la línea */
+    transition: width 0.3s ease; /* Transición suave para el cambio de ancho */
+}
+
+/* Animación de la línea al pasar el cursor sobre la sección */
+.footer__section:hover .footer__title::after,
+.footer__brand:hover .footer__title::after {
+    width: 60px; /* Aumenta el ancho de la línea al pasar el cursor por la sección */
+}
+
+/* Estilo para el texto descriptivo */
+.footer__description {
+    color: var(--color-4); /* Color blanco para el texto */
+    font-size: 1.5rem; /* Tamaño de fuente (1.5rem = 24px con base de 16px) */
+    line-height: 1.7; /* Altura de línea para mejor legibilidad (170% del tamaño de fuente) */
+    margin-bottom: 2rem; /* Espacio debajo del párrafo */
+    opacity: 0.85; /* Ligera transparencia para suavizar el texto */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Botón de llamada a la acción (CTA) */
+.footer__cta {
+    display: inline-block; /* Permite establecer dimensiones pero se comporta como texto en línea */
+    background: linear-gradient(135deg, var(--color-1), #d4a017); /* Gradiente diagonal desde dorado claro a más oscuro */
+    color: var(--color-3); /* Texto en color negro */
+    padding: 1.2rem 2.4rem; /* Relleno interior (1.2rem arriba/abajo, 2.4rem izquierda/derecha) */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: 700; /* Grosor de fuente (negrita) */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades animables */
+    position: relative; /* Necesario para el efecto de superposición */
+    overflow: hidden; /* Oculta el desbordamiento del efecto de superposición */
+    z-index: 1; /* Asegura que el texto esté por encima del efecto */
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2); /* Sombra sutil para efecto de elevación */
+}
+
+/* Efecto al pasar el cursor sobre el botón CTA */
+.footer__cta:hover {
+    transform: translateY(-3px); /* Mueve el botón hacia arriba 3px */
+    box-shadow: 0 6px 15px rgba(184, 134, 11, 0.3); /* Aumenta la sombra para efecto de elevación */
+}
+
+/* Efecto de superposición para el botón CTA */
+.footer__cta::before {
+    content: ''; /* Requerido para que el pseudo-elemento sea visible */
+    position: absolute; /* Posicionamiento con respecto al botón */
+    top: 0; /* Alineado con el borde superior */
+    left: 0; /* Alineado con el borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho del botón */
+    height: 100%; /* Ocupa toda la altura del botón */
+    background: linear-gradient(135deg, var(--color-5), rgba(128, 0, 0, 0.8)); /* Gradiente diagonal en tonos rojos */
+    z-index: -1; /* Coloca este elemento detrás del texto */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transición suave con curva de aceleración personalizada */
+    transform: scaleX(0); /* Inicialmente invisible (ancho 0) */
+    transform-origin: right; /* Punto de origen de la transformación */
+}
+
+/* Animación del efecto de superposición al pasar el cursor */
+.footer__cta:hover::before {
+    transform: scaleX(1); /* Expande el efecto horizontalmente */
+    transform-origin: left; /* Cambia el origen para que se expanda desde la izquierda */
+}
+
+/* Lista de enlaces */
+.footer__list {
+    list-style: none; /* Elimina los marcadores de lista */
+    padding: 0; /* Elimina el relleno predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* Elementos de la lista */
+.footer__list-item {
+    margin-bottom: 1.2rem; /* Espacio entre elementos de la lista */
+    position: relative; /* Permite posicionamiento relativo para elementos internos */
+    padding-left: 0; /* No hay relleno inicial a la izquierda */
+    transition: padding-left 0.3s ease; /* Transición suave para el relleno izquierdo */
+}
+
+/* Enlaces dentro de la lista */
+.footer__link {
+    color: var(--color-4); /* Color blanco para los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 1.6rem; /* Tamaño de fuente */
+    display: inline-block; /* Permite establecer dimensiones pero se comporta como texto en línea */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    position: relative; /* Necesario para el posicionamiento del ícono */
+    padding-left: 0; /* Sin relleno izquierdo inicialmente */
+}
+
+/* Flecha que aparece al pasar el cursor sobre los enlaces */
+.footer__link::before {
+    content: "›"; /* Símbolo de flecha */
+    color: var(--color-1); /* Color dorado para la flecha */
+    font-size: 2rem; /* Tamaño de la flecha */
+    line-height: 0; /* Reducir altura de línea para alinear correctamente */
+    position: absolute; /* Posicionamiento con respecto al enlace */
+    left: -15px; /* Posición inicial fuera de la vista */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-40%); /* Ajuste fino de la posición vertical */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease, left 0.3s ease; /* Transiciones suaves para opacidad y posición */
+}
+
+/* Efecto al pasar el cursor sobre los enlaces */
+.footer__link:hover {
+    color: var(--color-1); /* Cambia el color del enlace a dorado */
+    padding-left: 15px; /* Añade espacio a la izquierda para la flecha */
+}
+
+/* Muestra la flecha al pasar el cursor */
+.footer__link:hover::before {
+    opacity: 1; /* Hace visible la flecha */
+    left: 0; /* Mueve la flecha a su posición final */
+}
+
+/* Elementos de contacto (teléfono, email, dirección) */
+.footer__contact-item {
+    display: flex; /* Activa flexbox para alinear ícono y texto */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-bottom: 1.5rem; /* Espacio entre elementos de contacto */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: var(--color-4); /* Color blanco para el texto */
+    opacity: 0.85; /* Ligera transparencia */
+}
+
+/* Iconos para elementos de contacto */
+.footer__icon {
+    color: var(--color-1); /* Color dorado para los iconos */
+    font-size: 2rem; /* Tamaño del icono */
+    margin-right: 1.2rem; /* Espacio entre el icono y el texto */
+    flex-shrink: 0; /* Evita que el icono se encoja si falta espacio */
+}
+
+/* Subtítulos dentro de las secciones (como "Horario de Atención") */
+.footer__subtitle {
+    color: var(--color-4); /* Color blanco para el texto */
+    font-size: 1.7rem; /* Tamaño de fuente */
+    margin: 2.5rem 0 1.5rem; /* Margen: 2.5rem arriba, 0 lados, 1.5rem abajo */
+    font-weight: 600; /* Semibold para destacarlo */
+}
+
+/* Contenedor de horarios */
+.footer__schedule {
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    gap: 1rem; /* Espacio entre elementos de horario */
+}
+
+/* Elementos individuales de horario (día + horas) */
+.footer__schedule-item {
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye el espacio: día a la izquierda, hora a la derecha */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: var(--color-4); /* Color blanco */
+    opacity: 0.85; /* Ligera transparencia */
+}
+
+/* Estilo para los nombres de los días */
+.footer__day {
+    font-weight: 600; /* Semibold para destacar los días */
+}
+
+/* Estilo para las horas */
+.footer__hours {
+    color: var(--color-1); /* Color dorado para las horas */
+}
+
+/* Contenedor de iconos de redes sociales */
+.footer__social {
+    display: flex; /* Activa flexbox para alinear los iconos horizontalmente */
+    gap: 1.5rem; /* Espacio entre iconos */
+    margin-top: 2.5rem; /* Espacio arriba del contenedor */
+}
+
+/* Enlaces de redes sociales */
+.footer__social-link {
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra el icono verticalmente */
+    justify-content: center; /* Centra el icono horizontalmente */
+    width: 40px; /* Ancho del botón circular */
+    height: 40px; /* Altura del botón circular (igual al ancho para forma circular) */
+    background-color: rgba(105, 105, 105, 0.2); /* Color gris semi-transparente */
+    border-radius: 50%; /* Forma circular */
+    color: var(--color-4); /* Color blanco para el icono */
+    font-size: 2rem; /* Tamaño del icono */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+    position: relative; /* Necesario para el efecto de fondo */
+    overflow: hidden; /* Oculta el desbordamiento del efecto */
+}
+
+/* Efecto de fondo para los iconos de redes sociales */
+.footer__social-link::before {
+    content: ''; /* Necesario para que el pseudo-elemento sea visible */
+    position: absolute; /* Posicionamiento respecto al enlace */
+    top: 0; /* Alineado con el borde superior */
+    left: 0; /* Alineado con el borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    background-color: var(--color-1); /* Fondo dorado para el efecto */
+    border-radius: 50%; /* Forma circular */
+    transform: scale(0); /* Inicialmente invisible (tamaño 0) */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con rebote */
+    z-index: -1; /* Coloca por detrás del icono */
+}
+
+/* Efecto al pasar el cursor sobre los iconos de redes sociales */
+.footer__social-link:hover {
+    color: var(--color-3); /* Cambia el color del icono a negro */
+    transform: translateY(-3px); /* Eleva ligeramente el icono */
+}
+
+/* Anima el fondo al pasar el cursor */
+.footer__social-link:hover::before {
+    transform: scale(1); /* Expande el fondo dorado hasta llenar el círculo */
+}
+
+/* Asegura que el icono esté encima del efecto de fondo */
+.footer__social-link i {
+    position: relative; /* Necesario para que respete el z-index */
+    z-index: 1; /* Coloca el icono por encima del fondo */
+}
+
+/* Sección inferior del footer (copyright, enlaces legales) */
+.footer__bottom {
+    border-top: 1px solid rgba(105, 105, 105, 0.3); /* Borde superior sutil */
+    padding: 2rem 0; /* Relleno vertical */
+    margin-top: 4rem; /* Espacio superior */
+}
+
+/* Contenedor de la sección inferior */
+.footer__bottom .footer__container {
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye el espacio: copyright a la izquierda, enlaces a la derecha */
+    align-items: center; /* Centra verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
+    gap: 1.5rem; /* Espacio entre elementos */
+}
+
+/* Texto de copyright */
+.footer__copyright {
+    font-size: 1.4rem; /* Tamaño de fuente reducido */
+    color: var(--color-4); /* Color blanco */
+    opacity: 0.7; /* Mayor transparencia que otros textos */
+    margin: 0; /* Elimina márgenes predeterminados */
+}
+
+/* Contenedor de enlaces legales */
+.footer__legal {
+    display: flex; /* Activa flexbox */
+    gap: 2rem; /* Espacio entre enlaces */
+}
+
+/* Enlaces legales (Política de privacidad, Términos y condiciones) */
+.footer__legal-link {
+    font-size: 1.4rem; /* Tamaño de fuente reducido */
+    color: var(--color-4); /* Color blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    opacity: 0.7; /* Mayor transparencia inicialmente */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el cursor sobre enlaces legales */
+.footer__legal-link:hover {
+    color: var(--color-1); /* Cambia a color dorado */
+    opacity: 1; /* Elimina transparencia */
+}
+
+/* ===== DISEÑO RESPONSIVO ===== */
+
+/* Media query para pantallas móviles (hasta 768px) */
+@media screen and (max-width: 768px) {
+    /* Cambia el layout a una sola columna */
+    .footer__container {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 3rem; /* Reduce el espacio entre secciones */
+    }
+    
+    /* Centra el contenido en la sección de marca */
+    .footer__brand {
+        text-align: center; /* Centra el texto */
+        align-items: center; /* Centra los elementos flex */
+    }
+    
+    /* Ajusta la línea decorativa para centrarla */
+    .footer__title::after {
+        left: 50%; /* Posiciona en el centro horizontal */
+        transform: translateX(-50%); /* Ajusta para centrar exactamente */
+    }
+    
+    /* Mantiene el ancho de la línea decorativa al hacer hover */
+    .footer__section:hover .footer__title::after,
+    .footer__brand:hover .footer__title::after {
+        width: 60px; /* Mantiene el mismo ancho al hacer hover */
+    }
+    
+    /* Centra el texto descriptivo */
+    .footer__description {
+        text-align: center; /* Centra el texto */
+    }
+    
+    /* Ajusta el layout de la sección inferior */
+    .footer__bottom .footer__container {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        text-align: center; /* Centra el texto */
+    }
+    
+    /* Centra los enlaces legales */
+    .footer__legal {
+        justify-content: center; /* Centra los enlaces horizontalmente */
+    }
+    
+    /* Ajusta el comportamiento de los enlaces en móvil */
+    .footer__link:hover {
+        padding-left: 20px; /* Aumenta ligeramente el padding para mejor experiencia táctil */
+    }
+}
+
+/* Media query para tablets (entre 768px y 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Cambia el layout a dos columnas */
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    }
+}
+
+/* Mejoras de accesibilidad: estilos para el foco al navegar con teclado */
+.footer__link:focus,
+.footer__social-link:focus,
+.footer__legal-link:focus,
+.footer__cta:focus {
+    outline: 2px solid var(--color-1); /* Borde visible alrededor del elemento enfocado */
+    outline-offset: 2px; /* Espaciado entre el borde y el elemento */
+}
+
+/* Adaptaciones para usuarios que prefieren menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+    /* Desactiva transiciones para usuarios que prefieren menos movimiento */
+    .footer__link::before,
+    .footer__cta::before,
+    .footer__title::after,
+    .footer__social-link::before {
+        transition: none; /* Elimina todas las transiciones */
+    }
+}
+
+
+/*.......... Botones ....................... */
+
+
+.boton {
+
+    background-color: var(--color-4);
+    color: var(--color-3);
+    padding: 1rem 3rem;
+    /* Tamaño más pequeño */
+    margin: 0 auto;
+    /* Centra horizontalmente */
+    
+    border-radius: 1.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+
+}
+
+.boton:hover {
+    background-color: var(--color-1);
+    color: var(--color-4);
+    
+    transition: ease 0.4s;
+}
+
+.boton2 {
+    background-color: var(--color-4);
+    color: var(--color-3);
+    padding: 1rem 3rem;
+   
+    /* Tamaño más pequeño */
+    margin: 0 auto;
+    /* Centra horizontalmente */
+    border-radius: 1.5rem;
+    text-align: center;
+}
+
+.boton2:hover {
+    background-color: var(--color-1);
+    color: var(--color-4);
+    
+
+    transition: ease 0.5s;
+}
