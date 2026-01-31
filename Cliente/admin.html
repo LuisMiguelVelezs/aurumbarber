@@ -57,12 +57,13 @@
 
     <button id="mostrar-form-btn" type="button">Agregar Reserva</button>
     <button id="mostrar-barbero-btn" type="button">Agregar Barbero</button>
+    <button id="mostrar-pedidos-btn" type="button">Ver Pedidos de Tienda</button>
 
     
 
     <form id="agregar-form" style="display:none;">
         <h2>Agregar Reserva Manualmente</h2>
-        
+
         <div class="form-rowI">   
 
             <label>Nombre: <input type="text" id="nuevo-nombre" required></label>
@@ -164,20 +165,29 @@
         </div>
     </section>
 
-    <table id="tabla-compras">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Email</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Producto</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <!-- Sección de pedidos de la tienda -->
+    <section id="seccion-pedidos" style="display:none;">
+        <h2>Pedidos de la Tienda</h2>
+        <div class="tabla-pedidos-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Productos</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-pedidos"></tbody>
+            </table>
+        </div>
+    </section>
+
+    
 </body>
 
 </html>

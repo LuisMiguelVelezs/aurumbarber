@@ -11,11 +11,40 @@
         href="https://fonts.googleapis.com/css2?family=Staatliches&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/menuP.css">
+    <link rel="stylesheet" href="../CSS/carrito.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
 </head>
 
 <body>
+    <!-- Botón flotante del carrito -->
+    <button id="carrito-btn" class="carrito-flotante">
+        <i class='bx bx-cart'></i>
+        <span id="contador-carrito" class="contador-badge">0</span>
+    </button>
+
+    <!-- Modal del carrito -->
+    <div id="carrito-modal" class="carrito-modal">
+        <div class="carrito-contenido">
+            <div class="carrito-header">
+                <h2><i class='bx bx-cart'></i> Mi Carrito</h2>
+                <button id="cerrar-carrito" class="btn-cerrar">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div id="carrito-items" class="carrito-lista">
+                <!-- Items del carrito se cargarán dinámicamente -->
+            </div>
+            <div class="carrito-footer">
+                <div class="carrito-total">
+                    <span>Total:</span>
+                    <span id="total-carrito">$0</span>
+                </div>
+                <button id="vaciar-carrito" class="btn-secundario">Vaciar Carrito</button>
+                <button id="finalizar-compra" class="btn-primario">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
 
 
     <main>
@@ -239,9 +268,7 @@
 
     </main>
 
-
-
-
+    <script type="module" src="../../Js/carrito.js"></script>
 </body>
 
 </html>

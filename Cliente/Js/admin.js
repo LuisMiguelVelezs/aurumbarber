@@ -407,6 +407,104 @@ tablaBarberos?.addEventListener("click", async (e) => {
   }
 });
 
+// --- PEDIDOS DE TIENDA ---
+const mostrarPedidosBtn = document.getElementById("mostrar-pedidos-btn");
+const seccionPedidos = document.getElementById("seccion-pedidos");
+const tablaPedidos = document.getElementById("tabla-pedidos");
+
+// Mostrar/ocultar la sección de pedidos
+mostrarPedidosBtn?.addEventListener("click", () => {
+  if (seccionPedidos.style.display === "none" || !seccionPedidos.style.display) {
+    // Ocultar otros formularios
+    agregarForm.style.display = "none";
+    mostrarFormBtn.textContent = "Agregar Reserva";
+    seccionBarberos.style.display = "none";
+    mostrarBarberoBtn.textContent = "Agregar Barbero";
+    
+    seccionPedidos.style.display = "block";
+    mostrarPedidosBtn.textContent = "Ocultar Pedidos";
+    cargarPedidos();
+  } else {
+    seccionPedidos.style.display = "none";
+    mostrarPedidosBtn.textContent = "Ver Pedidos de Tienda";
+  }
+});
+
+// Cargar pedidos desde Firebase
+async function cargarPedidos() {
+  if (!tablaPedidos) return;
+  tablaPedidos.innerHTML = "";
+  
+  const querySnapshot = await getDocs(collection(db, "pedidos"));
+  querySnapshot.forEach(docSnap => {
+    const data = docSnap.data();
+    const tr = document.createElement("tr");
+    
+    // Formatear lista de productos
+    let productosTexto = "";
+    if (data.productos && Array.isArray(data.productos)) {
+      productosTexto = data.productos.map(p => 
+        `${p.nombre} x${p.cantidad}`
+      ).join(", ");
+    }
+    
+    // Formatear fecha
+    let fechaTexto = "";
+    if (data.fecha) {
+      const fecha = new Date(data.fecha);
+      fechaTexto = fecha.toLocaleString('es-CO');
+    }
+    
+    // Color del estado
+    const estadoColor = data.estado === 'completado' ? 'green' : 
+                       data.estado === 'cancelado' ? 'red' : 'orange';
+    
+    tr.innerHTML = `
+      <td>${data.nombre}</td>
+      <td>${data.telefono}</td>
+      <td>${data.email}</td>
+      <td>${productosTexto}</td>
+      <td>$${data.total.toLocaleString()}</td>
+      <td>${fechaTexto}</td>
+      <td><span style="color:${estadoColor}; font-weight:bold;">${data.estado || 'pendiente'}</span></td>
+      <td>
+        <button class="cambiar-estado-btn" data-id="${docSnap.id}" data-estado="${data.estado}">Cambiar Estado</button>
+        <button class="eliminar-pedido-btn" data-id="${docSnap.id}">Eliminar</button>
+      </td>
+    `;
+    tablaPedidos.appendChild(tr);
+  });
+}
+
+// Manejar eventos de pedidos
+tablaPedidos?.addEventListener("click", async (e) => {
+  const id = e.target.getAttribute("data-id");
+  
+  if (e.target.classList.contains("eliminar-pedido-btn")) {
+    if (confirm("¿Eliminar este pedido?")) {
+      await deleteDoc(doc(db, "pedidos", id));
+      await cargarPedidos();
+    }
+  }
+  
+  if (e.target.classList.contains("cambiar-estado-btn")) {
+    const estadoActual = e.target.getAttribute("data-estado") || 'pendiente';
+    const nuevoEstado = prompt(
+      `Estado actual: ${estadoActual}\nIngresa el nuevo estado:\n- pendiente\n- completado\n- cancelado`,
+      estadoActual
+    );
+    
+    if (nuevoEstado && ['pendiente', 'completado', 'cancelado'].includes(nuevoEstado.toLowerCase())) {
+      await updateDoc(doc(db, "pedidos", id), {
+        estado: nuevoEstado.toLowerCase()
+      });
+      await cargarPedidos();
+    } else if (nuevoEstado) {
+      alert("Estado inválido. Usa: pendiente, completado o cancelado");
+    }
+  }
+});
+
 // Inicializa el select de barberos y reservas al cargar la página
 document.addEventListener("DOMContentLoaded", async () => {
   await poblarSelectBarberos("nuevo-barbero");
