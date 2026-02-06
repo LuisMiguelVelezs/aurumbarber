@@ -1,8 +1,8 @@
-# 💈 Aurum Barber
+# Aurum Barber
 
 Sistema de gestión de reservas y administración para barbería.
 
-## 📋 Descripción
+## Descripción
 
 Aurum Barber es una aplicación web completa para la gestión de una barbería, que incluye:
 - Sistema de reservas en línea para clientes
@@ -11,14 +11,14 @@ Aurum Barber es una aplicación web completa para la gestión de una barbería, 
 - Catálogo de servicios y productos
 - Dashboard con estadísticas
 
-## 🚀 Tecnologías
+## Tecnologías
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Backend**: Firebase (Firestore Database)
 - **Autenticación**: Firebase Auth
 - **Hosting**: Firebase Hosting (por configurar)
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 PrBarber/
@@ -34,7 +34,7 @@ PrBarber/
     └── index.html       # Punto de entrada
 ```
 
-## ⚙️ Instalación y Configuración
+## Instalación y Configuración
 
 ### Requisitos previos
 - Navegador web moderno
@@ -58,19 +58,19 @@ cd aurumbarber
 ## 🔧 Características
 
 ### Para Clientes
-- ✅ Reserva de citas online
-- ✅ Selección de barbero
-- ✅ Selección de servicios (Cabello, Barba, Facial, Productos)
-- ✅ Catálogo de productos
+-  Reserva de citas online
+-  Selección de barbero
+-  Selección de servicios (Cabello, Barba, Facial, Productos)
+-  Catálogo de productos
 
 ### Para Administradores
-- ✅ Panel de control con estadísticas
-- ✅ Gestión de reservas (crear, editar, eliminar)
-- ✅ Gestión de barberos
-- ✅ Búsqueda y filtrado de reservas
-- ✅ Validación de horarios disponibles
+-  Panel de control con estadísticas
+-  Gestión de reservas (crear, editar, eliminar)
+-  Gestión de barberos
+-  Búsqueda y filtrado de reservas
+-  Validación de horarios disponibles
 
-## 📝 Uso
+##  Uso
 
 ### Acceso al Panel de Administración
 Abre `Cliente/admin.html` para acceder al panel administrativo donde podrás:
@@ -80,14 +80,14 @@ Abre `Cliente/admin.html` para acceder al panel administrativo donde podrás:
 - Gestionar barberos
 - Ver estadísticas del negocio
 
-## 🔒 Seguridad
+##  Seguridad
 
 **Importante**: Las reglas de Firestore están en modo desarrollo. Antes de producción:
 1. Implementa autenticación de usuarios
 2. Configura reglas de seguridad en Firebase
 3. Protege el panel de administración
 
-## 🛠️ Desarrollo
+##  Desarrollo
 
 ### Comandos Git útiles
 
@@ -108,7 +108,7 @@ git push
 git log --oneline
 ```
 
-## 📈 Roadmap
+##  Roadmap
 
 - [ ] Implementar autenticación de usuarios
 - [ ] Sistema de notificaciones por email
@@ -116,12 +116,12 @@ git log --oneline
 - [ ] App móvil (PWA)
 - [ ] Sistema de fidelización de clientes
 
-## 👨‍💻 Autor
+##  Autor
 
 **Luis Miguel Vélez**
 - GitHub: [@LuisMiguelVelezs](https://github.com/LuisMiguelVelezs)
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto es de código privado.
 
